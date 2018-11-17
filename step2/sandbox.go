@@ -20,4 +20,5 @@ func main() {
 
 	fmt.Scanln()
 	fmt.Println("done")
+	fmt.Println("dmc")
 }
