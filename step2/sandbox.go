@@ -1,11 +1,23 @@
 package main
 
-import (
-	"fmt"
-	"time"
-)
+import "fmt"
+
+func f(from string) {
+	for i := 0; i < 3; i++ {
+		fmt.Println(from, ":", i)
+	}
+}
 
 func main() {
-	fmt.Println("welcome to playground")
-	fmt.Println("The time is", time.Now())
+	f("direct")
+
+	// Sử dụng go f() để thực thực hàm f() trong goroutines.
+	go f("goroutine")
+
+	go func(msg string) {
+		fmt.Println(msg)
+	}("going")
+
+	fmt.Scanln()
+	fmt.Println("done")
 }
